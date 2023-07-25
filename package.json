@@ -1,7 +1,7 @@
 {
   "name": "ipad-cursor-hexo",
   "version": "1.0.0",
-  "description": "use ipad-cursor in hexo",
+  "description": "ipad cursor style that can be used in your hexo framework",
   "main": "index.js",
   "types": "index.d.ts",
   "type": "module",
@@ -17,8 +17,8 @@
     "cursor",
     "ipad-cursor"
   ],
-  "author": "zqqcee",
-  "repository": "https://github.com/catsjuice/ipad-cursor/",
+  "author": "zqqcee<https://github.com/zqqcee>",
+  "repository": "https://github.com/zqqcee/ipad-cursor-hexo",
   "license": "MIT",
   "dependencies": {
     "ipad-cursor": "^0.4.4"

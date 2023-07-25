@@ -8,7 +8,7 @@ import { TagConfig, Iconfig } from ".";
  * @param {IpadCursorConfig} cursorConfig cursor normal config
  * @param {Function} effect other effect
  */
-function init(config: TagConfig, cursorConfig: IpadCursorConfig, effect?: () => void): void {
+function init(config: TagConfig = {}, cursorConfig: IpadCursorConfig = {}, effect?: () => void): void {
     if (effect) {
         effect();
     }
@@ -47,7 +47,7 @@ const bindAttr = (query: string, cfg: Iconfig): void => {
 }
 const bindAttrNested = (query: string, cfg: Iconfig): void => {
     const { type, style } = cfg;
-    cfg = cfg.children;
+    cfg = cfg.children as any;
     query = Object.keys(cfg)[0];
     document.querySelectorAll(query)?.forEach(p => {
         setAttr(p, type, style);
