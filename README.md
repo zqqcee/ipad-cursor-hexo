@@ -187,5 +187,5 @@ Great thanks for [@CatsJuice](https://github.com/CatsJuice), and this great proj
 **Ref:**
 
 - 🔥：[ipad-cursor](https://github.com/CatsJuice/ipad-cursor)
-- 🔥：[oooo.so](https://oooo.so)🔥
+- 🔥：[oooo.so](https://oooo.so)
 - 🔥：[ipad-cursor.oooo.so](https://ipad-cursor.oooo.so)🔥
