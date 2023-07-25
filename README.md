@@ -1,9 +1,5 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://cursor.oooo.so/ipad-cursor-dark.svg">
-    <img height="100" src="https://cursor.oooo.so/ipad-cursor.svg">
     <img height="100" style="border-radius:10%" src="doc/hexo.jpg"></img>
-  </picture>
 </p>
 
 
