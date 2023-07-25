@@ -136,6 +136,19 @@ If you want to configure all the a tags in the article tag
 
 For the second, you can config what is your cursor look like.
 
+## My Usage
+
+```js
+import init from "https://unpkg.com/ipad-cursor-hexo@latest";
+
+import { config, cursorConfig } from "./config.js" 
+const effect = () => {
+    document.querySelector('img').style.userSelect = 'none'
+}
+
+document.addEventListener('DOMContentLoaded', () => init(config, cursorConfig));
+```
+
 ## **Notice**
 
 In hexo, some tags are very difficult to locate with id or class, like:
