@@ -1,30 +1,30 @@
 #!/usr/bin/env node
-import cursor from "ipad-cursor"
-import { IpadCursorConfig, ICursorType } from "ipad-cursor";
-import { TagConfig, Iconfig } from ".";
+import cursor from "https://unpkg.com/ipad-cursor@latest"
 
 /**
  * @param {*} config tag style config
  * @param {IpadCursorConfig} cursorConfig cursor normal config
  * @param {Function} effect other effect
  */
-function init(config: TagConfig = {}, cursorConfig: IpadCursorConfig = {}, effect?: () => void): void {
+function init(config, cursorConfig, effect) {
     if (effect) {
         effect();
     }
-    document.querySelectorAll('*').forEach(_ => (_ as HTMLElement).style.cursor = 'none');
-    Object.keys(config).forEach(query => {
-        bindAttr(query, config[query]);
-    })
+    document.querySelectorAll('*').forEach(_ => _.style.cursor = 'none');
+    if (config) {
+        Object.keys(config).forEach(query => {
+            bindAttr(query, config[query]);
+        })
+    }
     cursor.initCursor(cursorConfig);
 }
-const setAttr = (item: Element | undefined, type: ICursorType, style: string | undefined): void => {
+const setAttr = (item, type, style) => {
     item?.setAttribute('data-cursor', type);
     if (style) {
         item?.setAttribute('data-cursor-style', style);
     }
 }
-const bindAttr = (query: string, cfg: any): void => {
+const bindAttr = (query, cfg) => {
     const { type, style } = cfg;
     const selPath = query.split('>');
     if (selPath.length > 2) {
@@ -45,9 +45,9 @@ const bindAttr = (query: string, cfg: any): void => {
     }
 
 }
-const bindAttrNested = (query: string, cfg: any): void => {
+const bindAttrNested = (query, cfg) => {
     const { type, style } = cfg;
-    cfg = cfg.children as any;
+    cfg = cfg.children;
     query = Object.keys(cfg)[0];
     document.querySelectorAll(query)?.forEach(p => {
         setAttr(p, type, style);

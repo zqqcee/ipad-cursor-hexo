@@ -1,17 +1,21 @@
 {
   "name": "ipad-cursor-hexo",
-  "version": "1.0.0",
+  "version": "3.0.7",
   "description": "ipad cursor style that can be used in your hexo framework",
   "main": "index.js",
-  "types": "index.d.ts",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./index.ts",
-      "types": "./index.d.ts",
-      "default": "./index.ts"
+      "import": "./index.js",
+      "default": "./index.js"
     }
   },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "files": [
+    "./umd"
+  ],
   "keywords": [
     "hexo",
     "cursor",
@@ -21,6 +25,14 @@
   "repository": "https://github.com/zqqcee/ipad-cursor-hexo",
   "license": "MIT",
   "dependencies": {
-    "ipad-cursor": "^0.4.4"
+    "ipad-cursor": "^0.4.4",
+    "tslib": "^2.6.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "rollup": "^3.26.3",
+    "typescript": "^5.1.6"
   }
 }

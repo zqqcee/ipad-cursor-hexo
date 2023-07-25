@@ -6,9 +6,7 @@
   </picture>
 </p>
 
-
-
-# <h2 align="center">ipad-curosr-hexo </h2>
+# `<h2 align="center">`ipad-curosr-hexo `</h2>`
 
 <p align="center">
  ipad cursor style that can be used in your hexo framework
@@ -25,7 +23,6 @@
   </a>
 </p>
 
-
 ## Inspiration
 
 Inspired by [CatsJuice/ipad-cursor](https://github.com/CatsJuice/ipad-cursor), Add ipad cursor into your hexo(NexT theme) blog in a **configurable way**.
@@ -34,7 +31,7 @@ Inspired by [CatsJuice/ipad-cursor](https://github.com/CatsJuice/ipad-cursor), A
 
 ## Principle
 
-**core: add `data-cursor='block'` or `data-cursor='text'` to the tag with `document.querySelector`, like :** 
+**core: add `data-cursor='block'` or `data-cursor='text'` to the tag with `document.querySelector`, like :**
 
 Before:
 
@@ -42,13 +39,13 @@ Before:
 <div></div>
 <p></p>
 ```
+
 After:
 
 ```html
 <div data-cursor="block"></div>
 <p data-cursor="text"></p>
 ```
-
 
 > principle of ipad-cursor：
 >
@@ -63,7 +60,7 @@ After:
 In hexo, You can only install in this way:
 
 ```js
-import init from ""
+import init from "https://unpkg.com/ipad-cursor-hexo@latest"
 ```
 
 ## Usage
@@ -71,22 +68,19 @@ import init from ""
 ### Basic Usage
 
 - **Step1**: Create a directory named `ipad-cursor-hexo` in `${SourcePath}/themes/next/source/js`
-
 - **Step2**: Create a `js` file named `index.js` in `${SourcePath}/themes/next/source/js/ipad-cursor-hexo`.
-
 - **Step3:** Write **configuration**
-
 - **Step4:** Let `document` listen `DOMContentLoaded` events, bind `init` function onto it.
 
   `document.addEventListener('DOMContentLoaded', ()=>init());`
-
 - **Step5:** link the above `index.js` file to hexo blog.
+
   - **Step5.1:** Open `${SourcePath}/themes/next/layout/_partials/head/head.swig`
   - **Step5.2:** Add `<script src="/js/ipad-cursor-hexo/index.js" type="module"></script>` into the file
 
 ### Advanced Usage
 
-After excute the five steps in **basic-usage**, you will see a ipad-cursor :white_circle: in your blog.
+After excute the five steps in **basic-usage**, you will see a ipad-cursor ⚪️ in your blog.
 
 Moreover, you can custom :
 
@@ -146,7 +140,7 @@ For the second, you can config what is your cursor look like.
 
 In hexo, some tags are very difficult to locate with id or class, like:
 
-`<a href="/" rel="section"></a>` 
+`<a href="/" rel="section"></a>`
 
 or
 
@@ -162,7 +156,7 @@ or
 
 For the former, you have to add `id` locator into the `.swig` file **(you can use global search in vscode to find them).**
 
-For the later, you can use a special selector that we support, like`"div#menu-container>ul#menu"`:
+For the later, you can use a special selector that we support, like `"div#menu-container>ul#menu"`:
 
 ```js
 const config = {
@@ -183,6 +177,5 @@ Great thanks for [@CatsJuice](https://github.com/CatsJuice), and this great proj
 **Ref:**
 
 - 🔥：[ipad-cursor](https://github.com/CatsJuice/ipad-cursor)
-
 - 🔥：[oooo.so](https://oooo.so)🔥
 - 🔥：[ipad-cursor.oooo.so](https://ipad-cursor.oooo.so)🔥
