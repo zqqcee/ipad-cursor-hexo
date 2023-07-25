@@ -125,7 +125,7 @@ const config = {
     style:'radius:50%'
     children:{
     	"a":{
-    			type:"block",
+          type:"block",
     	}
     }
   },
@@ -173,8 +173,8 @@ For the later, you can use a special selector that we support, like `"div#menu-c
 
 ```js
 const config = {
- 	"div#menu-container>ul#menu":{
-    type:'block'
+  "div#menu-container>ul#menu":{
+      type:'block'
   }
 }
 ```
