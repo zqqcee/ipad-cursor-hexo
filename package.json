@@ -1,6 +1,6 @@
 {
   "name": "ipad-cursor-hexo",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "ipad cursor style that can be used in your hexo framework",
   "main": "index.js",
   "type": "module",

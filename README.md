@@ -2,11 +2,11 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://cursor.oooo.so/ipad-cursor-dark.svg">
     <img height="100" src="https://cursor.oooo.so/ipad-cursor.svg">
-    <img height="100" src="https://raw.githubusercontent.com/zqqcee/img_repo/main/img/202307251458774.svg"></img>
+    <img height="100" src="doc/hexo.svg"></img>
   </picture>
 </p>
 
-# `<h2 align="center">`ipad-curosr-hexo `</h2>`
+<h1 align="center">ipad-curosr-hexo</h1>
 
 <p align="center">
  ipad cursor style that can be used in your hexo framework
