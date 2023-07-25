@@ -1,0 +1,26 @@
+{
+  "name": "ipad-cursor-hexo",
+  "version": "1.0.0",
+  "description": "use ipad-cursor in hexo",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.d.ts",
+      "default": "./index.ts"
+    }
+  },
+  "keywords": [
+    "hexo",
+    "cursor",
+    "ipad-cursor"
+  ],
+  "author": "zqqcee",
+  "repository": "https://github.com/catsjuice/ipad-cursor/",
+  "license": "MIT",
+  "dependencies": {
+    "ipad-cursor": "^0.4.4"
+  }
+}
