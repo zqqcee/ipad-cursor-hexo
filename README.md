@@ -1,5 +1,5 @@
 <p align="center">
-    <img height="100" style="border-radius:10%" src="doc/hexo.jpg"></img>
+    <img style="border-radius:10%" height="300" src="doc/hexo.jpeg"></img>
 </p>
 
 
@@ -19,7 +19,6 @@
     <img src="https://raw.githubusercontent.com/zqqcee/img_repo/main/img/202307251512971.gif" />
   </a>
 </p>
-
 ## Inspiration
 
 Inspired by [CatsJuice/ipad-cursor](https://github.com/CatsJuice/ipad-cursor), Add ipad cursor into your hexo(NexT theme) blog in a **configurable way**.
@@ -65,11 +64,21 @@ import init from "https://unpkg.com/ipad-cursor-hexo@latest"
 ### Basic Usage
 
 - **Step1**: Create a directory named `ipad-cursor-hexo` in `${SourcePath}/themes/next/source/js`
+
 - **Step2**: Create a `js` file named `index.js` in `${SourcePath}/themes/next/source/js/ipad-cursor-hexo`.
-- **Step3:** Write **configuration**
+
+- **Step3:** Write **configuration**,see [config](#config) for more detail
+
 - **Step4:** Let `document` listen `DOMContentLoaded` events, bind `init` function onto it.
 
-  `document.addEventListener('DOMContentLoaded', ()=>init());`
+  - If you haven't any configuration:
+  
+    `document.addEventListener('DOMContentLoaded', ()=>init());`
+  
+  - If you have some configuration:
+  
+    `document.addEventListener('DOMContentLoaded', () => init(config, cursorConfig,effect));`
+  
 - **Step5:** link the above `index.js` file to hexo blog.
 
   - **Step5.1:** Open `${SourcePath}/themes/next/layout/_partials/head/head.swig`
@@ -83,10 +92,13 @@ Moreover, you can custom :
 
 1. which tag and what kind of style you want to config.
 2. What is your cursor look like.
+3. effect
 
 **See [Config](#config) for more detail.**
 
 ### Config
+
+#### 1. bind `data-cursor` to the tag
 
 For the first, you can config which tag and what kind of style you want to config, for example:
 
@@ -129,11 +141,79 @@ const config = {
 }
 ```
 
-If you want to configure all the a tags in the article tag
+#### 2. cursor style
 
-For the second, you can config what is your cursor look like.
+For the second, you can config what is your cursor look like,like `background`,`width`,`height`,etc.
+
+config it like this:
+
+```js
+const cursorConfig = {
+  normalStyle: {
+    background: '#ffcc00',
+  },
+  textStyle: {
+    background: '#ffcc00'
+  },
+}
+```
+
+#### 3. effect
+
+you can do some else in the effect function, like `useEffect` in `react`. In my blog, I use this to stop `<img>` from being selected.
+
+```js
+const effect = () => {
+	document.querySelector('img').style.userSelect = 'none'
+}
+```
 
 ## My Usage
+
+#### config.js
+
+```js
+export const config = {
+    "ul#menu>li.menu-item": {
+        type: 'block',
+    },
+    "article": {
+        type: 'text',
+        children: {
+            "a": {
+                type: 'block',
+            }
+        }
+    },
+    "div.post-body": {
+        type: 'text'
+    },
+    "ul.motion-element>li": {
+        type: "block"
+    },
+    //sidebar
+    "div.sidebar-inner": {
+        type: 'text'
+    },
+    "p": {
+        type: 'text'
+    },
+    "a": {
+        type: 'block'
+    },
+};
+
+export const cursorConfig = {
+    normalStyle: {
+        background: '#ffcc00',
+    },
+    textStyle: {
+        background: '#ffcc00'
+    },
+}
+```
+
+#### index.js
 
 ```js
 import init from "https://unpkg.com/ipad-cursor-hexo@latest";
@@ -143,7 +223,7 @@ const effect = () => {
     document.querySelector('img').style.userSelect = 'none'
 }
 
-document.addEventListener('DOMContentLoaded', () => init(config, cursorConfig));
+document.addEventListener('DOMContentLoaded', () => init(config, cursorConfig,effect));
 ```
 
 ## **Notice**
